@@ -2,24 +2,59 @@
 
 ## Herramientas
 
-### **1. Atom:**
+### **1. Visual Studio Code:**
 
 #### **1.1 Temas y Fuentes**
 
-- **UI Theme:** Nucleus Dark
-- **Sintax Theme:** Northem Dark
+- **UI Theme:** Monokai
+
 - **Font:** [Fira Code](https://github.com/tonsky/FiraCode)
 
+  Primero se debe instalar la fuente en el sistema operativo. Para el caso de linux se ejecuta la siguiente línea en la terminal.
+  
   ```
   sudo apt install fonts-firacode
   ```
 
+  Se debe incluir nuestra nueva fuente en el ```setting.json``` de vscode la siguiente línea:
+
+  ```json
+  "editor.fontFamily": "Fira Code"
+  ```
+
+  > Nota: Para abrir ```setting.json```  se oprime F1 estando en vscode y despúes se escribe Open Settings (JSON).
+
 #### **1.2 Plugins:**
 
-- **[emmet](https://github.com/emmetio/emmet-atom)**
-- **[color-picker](https://github.com/thomaslindstrom/color-picker)**
-- **[pigments](https://github.com/abe33/atom-pigments)**
-- **[file-icons](https://github.com/file-icons/atom)**
+- **Mitheil Emmet:** 
+
+  Es posible habilitar las funcionalidades de Emmet en ReactJS incluyendo las siguientes líneas en nuestro setting (JSON):
+
+  ```json
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
+  ```
+
+- **React-Native/React/Redux snippets for es6/es7** 
+
+- **Prettier - Code formatter:**
+
+Para hacer efectivo Prettier siempre que se guardan cambios en nuestros archivos js, se debe incluir en ```setting.json``` las siguientes líneas:
+
+```javascript
+"[javascript]": {
+   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+},
+```
+
+- **React-Native/React/Redux snippets for es6/es7** 
+
+- **vscode-icons**
+
+- **Import Cost**
+
 
 ### **2. React Developer Tools**
 
@@ -61,7 +96,7 @@ Simplemente se ejecuta:
 npm start
 ```
 
-### **_3. Nuestra Primera página_**
+### **4. Nuestra Primera página**
 
 Este script crea un **h1** con contenido y lo inyecta en el index.html:
 
@@ -98,9 +133,9 @@ ReactDOM.render(element, document.getElementById("root"));
 serviceWorker.register();
 ```
 
-#### **3.1 Otro Ejemplo**
+#### **4.1 Otro Ejemplo**
 
-Se pueden insertar variables dentro de jsx con las llaves {<varibles>} (En general cualquier expreción como 2+2)
+Se puede piner cualquier expresión de JavaScript dentro de llaves en JSX, por ejemplo: ```2 + 2```, ```funcuionX()```, cualquier expresión que devuelva un valor:
 
 ```javascript
 import React from "react";
