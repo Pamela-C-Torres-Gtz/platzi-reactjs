@@ -65,12 +65,7 @@ class Reloj extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <h1>Hora:</h1>
-        <h2>{this.state.date.toLocaleTimeString()} </h2>
-      </div>
-    );
+    return <span>{this.state.date.toLocaleTimeString()}</span>;
   }
 }
 

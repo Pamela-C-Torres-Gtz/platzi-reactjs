@@ -1,0 +1,27 @@
+.navbarColor {
+  background: "#1C3643";
+}
+
+.navbar-brand-custom {
+  color: #ffffff;
+}
+
+.navbar-brand-custom:hover {
+  color: #ffffff;
+}
+
+.navarTitle {
+  vertical-align: text-top;
+}
+
+.relojTag{
+  color:white;
+  font-size: 20px;
+}
+
+.reloj {
+  padding: 5px 10px 5px 10px;
+  background: #4485a5;
+  color: white;
+  font-size: 20px;
+}
