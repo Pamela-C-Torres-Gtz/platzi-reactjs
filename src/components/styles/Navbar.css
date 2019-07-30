@@ -20,8 +20,15 @@
 }
 
 .reloj {
-  padding: 5px 10px 5px 10px;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid;
+  padding: 0.47rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
   background: #4485a5;
   color: white;
-  font-size: 20px;
+  /* font-size: 20px; */
 }

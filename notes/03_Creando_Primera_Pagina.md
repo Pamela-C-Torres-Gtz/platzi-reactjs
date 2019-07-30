@@ -141,6 +141,7 @@ import header from "../images/platziconf-logo.svg";
 // Componentes:
 import Badge from "../components/Badge";
 import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar";
 
 class BadgeNew extends Component {
   render() {
@@ -164,13 +165,7 @@ class BadgeNew extends Component {
               />
             </div>
             <div className="col-6">
-              <Badge
-                firstName="Richard"
-                avatarUrl="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
-                lastName="Kaufman"
-                jobTitle="Frontend Engineer"
-                twitter="Sparragus"
-              />
+              <BadgeForm />
             </div>
           </div>
         </div>

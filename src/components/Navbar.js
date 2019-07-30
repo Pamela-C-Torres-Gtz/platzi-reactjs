@@ -4,9 +4,14 @@ import logo from "../images/logo.svg";
 
 import "./styles/Navbar.css";
 import Reloj from "./Reloj";
+import ToggleButton from "./ToggleButton";
 
 const navbarColor = {
   background: "#1C3643"
+};
+
+const styleToggle = {
+  fontWeight: "bold"
 };
 
 class Navbar extends Component {
@@ -20,8 +25,10 @@ class Navbar extends Component {
             <span className="navarTitle">Conf</span>
           </a>
           <span>
-            <span className="relojTag mr-2">Hora: </span>
-            <span className="reloj">
+            <span style={styleToggle}>
+              <ToggleButton />{" "}
+            </span>
+            <span className="reloj mb-0 h5">
               <Reloj />
             </span>
           </span>

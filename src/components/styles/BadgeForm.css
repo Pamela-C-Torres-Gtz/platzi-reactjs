@@ -1,0 +1,20 @@
+.colorInput{
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px 8px 8px 8px;
+  padding: 1.5rem;
+}
+
+.titleForm {
+  font-size: 35px;
+  text-align: center;
+  color: white;
+}
+
+.newAttendant {
+  margin-top: -210px;
+}
+
+.formTerms{
+  font-size: 15px;
+}
