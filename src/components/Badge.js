@@ -26,8 +26,8 @@ class Badge extends Component {
         </div>
 
         <div className="Badge__section-info">
-          <p>Frontend Engineer</p>
-          <p>@sparragus</p>
+          <p>{this.props.jobTitle}</p>
+          <p>@{this.props.twitter}</p>
         </div>
 
         <div className="Badge__footer">#platziconf</div>

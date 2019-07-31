@@ -26,7 +26,10 @@ class Navbar extends Component {
           </a>
           <span>
             <span style={styleToggle}>
-              <ToggleButton />{" "}
+              <ToggleButton
+                onClick={this.props.onClick}
+                buttonsValues={this.props.buttonsValues}
+              />
             </span>
             <span className="reloj mb-0 h5">
               <Reloj />

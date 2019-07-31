@@ -9,19 +9,6 @@ const colorTerms = {
 };
 
 class BadgeForm extends Component {
-  // Escucha los input
-  handleChange = e => {
-    /*
-      (1) console.log({ e }): Cada vez que se escribe se imprime un evento.
-      (2) value: e.target.value: Se imprime el valor que estamos escribiendo.
-      (3) name: e.target.name: Se imprime el valor que estamos escribiendo.
-    */
-    console.log({
-      value: e.target.value,
-      name: e.target.name
-    });
-  };
-
   // Escucha lo clicks del botón
   handleClick = e => console.log("Button was clicked");
 
@@ -35,6 +22,7 @@ class BadgeForm extends Component {
 
     e.preventDefault();
     console.log("Form was submitted");
+    console.log(this.state);
   };
 
   render() {
@@ -45,29 +33,28 @@ class BadgeForm extends Component {
         <div className="colorInput">
           {/* Evento del form: onSubmit */}
           <form onSubmit={this.handleSubmit}>
+            {/* Input del Firt Name */}
             <div className="form-group">
               <label htmlFor="firstName">First Name:</label>
               <input
-                /*
-                  En un input cada vez que ingresamos información se va a obtener 
-                  un evento onChange={this.handleChange}
-                */
-                onChange={this.handleChange}
-                type="text"
-                name="firtsName"
-                id="firstName"
+                onChange={this.props.onChange}
                 className="form-control"
+                type="text"
+                name="firstName"
+                id="firstName"
+                value={this.props.formValues.firstName}
               />
             </div>
 
             <div className="form-group">
               <label htmlFor="lastName">Last Name:</label>
               <input
-                onChange={this.handleChange}
+                onChange={this.props.onChange}
+                className="form-control"
                 type="text"
                 name="lastName"
                 id="lastName"
-                className="form-control"
+                value={this.props.formValues.lastName}
               />
             </div>
 
@@ -76,35 +63,40 @@ class BadgeForm extends Component {
             <div className="form-group">
               <label htmlFor="email">Email:</label>
               <input
-                onChange={this.handleChange}
-                type="text"
+                onChange={this.props.onChange}
+                className="form-control"
+                type="email"
                 name="email"
                 id="email"
-                className="form-control"
+                value={this.props.formValues.email}
               />
             </div>
 
+            {/* Input del jobTitle*/}
             <div className="form-group">
-              <label htmlFor="jobTitte">Job Tittle:</label>
+              <label htmlFor="jobTitle">Job title:</label>
               <input
-                onChange={this.handleChange}
-                type="text"
-                name="jobTitte"
-                id="jobTitte"
+                onChange={this.props.onChange}
                 className="form-control"
+                type="text"
+                name="jobTitle"
+                id="jobTitle"
+                value={this.props.formValues.jobTitle}
               />
             </div>
 
             <div className="form-group">
               <label htmlFor="twitter">Twitter:</label>
               <input
-                onChange={this.handleChange}
+                onChange={this.props.onChange}
+                className="form-control"
                 type="text"
                 name="twitter"
                 id="twitter"
-                className="form-control"
+                value={this.props.formValues.twitter}
               />
             </div>
+
             {/* onClick es el evento que acompaña al botón.
               
                 Cuando hay un botón dentro de un form, automáticamente

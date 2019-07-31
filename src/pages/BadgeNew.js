@@ -12,10 +12,44 @@ import Navbar from "../components/Navbar";
 import BadgeForm from "../components/BadgeForm";
 
 class BadgeNew extends Component {
+  state = {
+    form: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      jobTitle: "",
+      twitter: ""
+    },
+    buttons: {
+      watchButton: true
+    },
+    apps: {
+      watch: true
+    }
+  };
+
+  handleClick = e => {
+    this.setState({
+      buttons: {
+        ...this.state.buttons,
+        [e.target.name]: !this.state.buttons.watchButton
+      }
+    });
+  };
+
+  handleChange = e => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
+
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar onClick={this.handleClick} buttonsValues={this.state.buttons} />
 
         <div className="BageNew_Hero">
           <div className="container">
@@ -31,16 +65,20 @@ class BadgeNew extends Component {
           <div className="row">
             <div className="col-md-5 offset-md-1 ">
               <Badge
-                firstName="Richard"
+                firstName={this.state.form.firstName}
+                lastName={this.state.form.lastName}
+                twitter={this.state.form.twitter}
+                jobTitle={this.state.form.jobTitle}
+                email={this.state.form.email}
                 avatarUrl="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
-                lastName="Kaufman"
-                jobTitle="Frontend Engineer"
-                twitter="Sparragus"
               />
             </div>
 
             <div className="col-md-4 offset-md-1">
-              <BadgeForm />
+              <BadgeForm
+                onChange={this.handleChange}
+                formValues={this.state.form}
+              />
             </div>
           </div>
         </div>
