@@ -1,21 +1,37 @@
-.cardPicture{
+.cardPicture {
   border-radius: 50%;
   width: 80px;
   height: 80px;
 }
 
-.itemsCards{
+.itemsCards {
+  width: 24%;
+  margin-top: 10px;
   padding: 0.5em;
-  margin-bottom: 10px;
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 30% 70%;
+  grid-column-gap: 10px;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
 }
 
-.imgCard{
-  display:flex;
+.imgCard {
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cardsList {
+  padding-left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.loader {
+  width: 100%;
+  text-align: center;
+  height: 200px;
 }

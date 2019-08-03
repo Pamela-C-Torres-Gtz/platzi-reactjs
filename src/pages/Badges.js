@@ -22,7 +22,7 @@ class Badges extends Component {
           </div>
         </div>
 
-        <div className="Badges__container">
+        <div className="containerCards">
           <div className="Badges__buttons">
             {/* Se usa Link en lugar de a, y to en lugar de href  */}
             <Link to="/badges/new" className="btn btn-primary">
@@ -30,7 +30,7 @@ class Badges extends Component {
             </Link>
           </div>
 
-          <div>
+          <div className="containerCardsList">
             <BadgesList />
           </div>
         </div>
