@@ -21,6 +21,11 @@ class BadgeNew extends Component {
     }
   };
 
+  hundleSubmit = e => {
+    e.preventDefault();
+    this.props.history.push("/badges");
+  };
+
   handleChange = e => {
     this.setState({
       form: {
@@ -47,18 +52,18 @@ class BadgeNew extends Component {
           <div className="row">
             <div className="col-md-5 offset-md-1 ">
               <Badge
-                firstName={this.state.form.firstName}
-                lastName={this.state.form.lastName}
-                twitter={this.state.form.twitter}
-                jobTitle={this.state.form.jobTitle}
-                email={this.state.form.email}
-                avatarUrl="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
+                firstName={this.state.form.firstName || "Firs Name"}
+                lastName={this.state.form.lastName || "Last Name"}
+                twitter={this.state.form.twitter || "Twitter"}
+                jobTitle={this.state.form.jobTitle || "Job Title"}
+                email={this.state.form.email || "email"}
               />
             </div>
 
             <div className="col-md-4 offset-md-1">
               <BadgeForm
                 onChange={this.handleChange}
+                onSubmit={this.hundleSubmit}
                 formValues={this.state.form}
               />
             </div>

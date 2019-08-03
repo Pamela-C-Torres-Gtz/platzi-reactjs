@@ -13,17 +13,17 @@ class BadgeForm extends Component {
   handleClick = e => console.log("Button was clicked");
 
   // Escucha el submit del formulario
-  handleSubmit = e => {
-    /*
-      Para no mandar el fomulario y por ende no se recargue
-      la página, se debe realizar el preventDefault del evento.
-      El defaultpor defecto envia el formulario.
-    */
+  // handleSubmit = e => {
+  //   /*
+  //     Para no mandar el fomulario y por ende no se recargue
+  //     la página, se debe realizar el preventDefault del evento.
+  //     El defaultpor defecto envia el formulario.
+  //   */
 
-    e.preventDefault();
-    console.log("Form was submitted");
-    console.log(this.state);
-  };
+  //   e.preventDefault();
+  //   console.log("Form was submitted");
+  //   console.log(this.state);
+  // };
 
   render() {
     return (
@@ -32,7 +32,7 @@ class BadgeForm extends Component {
 
         <div className="colorInput">
           {/* Evento del form: onSubmit */}
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.props.onSubmit}>
             {/* Input del Firt Name */}
             <div className="form-group">
               <label htmlFor="firstName">First Name:</label>

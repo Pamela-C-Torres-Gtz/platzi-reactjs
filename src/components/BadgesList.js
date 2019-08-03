@@ -3,40 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import "./styles/BadgeList.css";
-import loadingGif from "../images/load.gif";
+import loadingGif from "../images/loading.gif";
 
-// const URL_API = "https://randomuser.me/api/";
-
-// async function getData(url) {
-//   let { results } = await fetch(url).then(response => response.json());
-//   return {
-//     id: results[0].login.uuid,
-//     firstName: results[0].name.first,
-//     lastName: results[0].name.last,
-//     age: results[0].dob.age,
-//     email: results[0].email,
-//     twitter: results[0].login.username,
-//     avatarUrl: results[0].picture.medium
-//   };
-// }
-
-// async function createUsers() {
-//   let people = new Array(4).fill(0).map(user => getData(URL_API));
-
-//   let users = await Promise.all(people);
-
-//   return users;
-// }
-
-/*
-  Instalación de Font Awesome React: 
-  https://www.npmjs.com/package/@fortawesome/react-fontawesome
-
-  (1) --> npm i --save @fortawesome/fontawesome-svg-core
-  (1) --> npm i --save @fortawesome/free-solid-svg-icons
-  (3) --> npm i --save @fortawesome/react-fontawesome
-  (2) Iconos --> npm i --save @fortawesome/free-brands-svg-icons
-*/
 class BadgesList extends Component {
   constructor(props) {
     super(props);
@@ -50,19 +18,10 @@ class BadgesList extends Component {
 
   componentDidMount() {
     this.fetchCharacters();
-    // this.setState({
-    //   data: [
-    //     createUsers()
-    //       .then(response => this.setState({ data: response }))
-    //       .catch()
-    //   ]
-    // });
   }
 
   fetchCharacters = async numberPage => {
     this.setState({ loading: true, error: null });
-
-    console.log(this.state.page);
 
     let buttonCharacters = 1;
 
@@ -109,13 +68,19 @@ class BadgesList extends Component {
     if (this.state.error) {
       return `Error: ${this.state.error.message}`;
     }
+    if (this.state.loading === true) {
+      return (
+        <div className="loader">
+          <img
+            src={loadingGif}
+            style={{ width: "200px", height: "200px" }}
+            alt="Gif Loading"
+          />
+        </div>
+      );
+    }
     return (
       <React.Fragment>
-        {this.state.loading && (
-          <div className="loader">
-            <img src={loadingGif} alt="Gif Loading" />
-          </div>
-        )}
         <ul className="cardsList">
           {this.state.data.map(card => {
             return (
@@ -137,7 +102,8 @@ class BadgesList extends Component {
         {!this.state.loading && (
           <div className="buttonShow">
             <button
-              onClick={() => this.fetchCharacters(-1)}
+              onClick={() => this.fetchCharacters()}
+              className="btn btn-primary mr-2 "
               disabled={this.state.page === 1}
               style={{
                 background: "#00acee",
@@ -145,12 +111,12 @@ class BadgesList extends Component {
                 width: "150px",
                 fontWeight: "bolder"
               }}
-              className="btn btn-primary mr-2"
             >
               Previous
             </button>
             <button
-              onClick={() => this.fetchCharacters(1)}
+              onClick={() => this.fetchCharacters()}
+              className="reloadCharacters"
               disabled={this.state.page === 25}
               style={{
                 background: "#00acee",

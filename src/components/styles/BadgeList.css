@@ -31,7 +31,9 @@
 }
 
 .loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  text-align: center;
-  height: 200px;
+  min-height: calc(100vh - 320px);
 }
