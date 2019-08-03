@@ -1,0 +1,21 @@
+.cardPicture{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.itemsCards{
+  padding: 0.5em;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.imgCard{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}

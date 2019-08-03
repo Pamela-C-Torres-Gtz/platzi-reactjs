@@ -3,8 +3,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
-// Se importa el componente
-import BadgeNew from "./pages/BadgeNew";
+// Se importa el App.js, aqui se va a tener browser router
+import App from "./App";
 
 // Importando Bootstrap
 import "bootstrap/dist/css/bootstrap.css";
@@ -15,7 +15,7 @@ import "./global.css";
 
 ReactDOM.render(
   // Props del componente Bagde.js
-  <BadgeNew />,
+  <App />,
 
   document.getElementById("root")
 );

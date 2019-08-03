@@ -2,10 +2,17 @@ import React, { Component } from "react";
 
 class Reloj extends Component {
   state = {
-    power: true,
+    power: this.props.power,
     date: new Date()
   };
 
+  powerWatch = () => {
+    if (this.props.power) {
+      return <span>{this.state.date.toLocaleTimeString()}</span>;
+    } else {
+      return <span>- - : - - : - -</span>;
+    }
+  };
   componentDidMount() {
     this.timerID = setInterval(() => this.tick(), 100);
   }
@@ -26,7 +33,7 @@ class Reloj extends Component {
   }
 
   render() {
-    return <span>{this.state.date.toLocaleTimeString()}</span>;
+    return this.powerWatch();
   }
 }
 

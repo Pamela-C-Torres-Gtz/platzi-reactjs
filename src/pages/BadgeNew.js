@@ -8,7 +8,6 @@ import header from "../images/platziconf-logo.svg";
 
 // Componentes:
 import Badge from "../components/Badge";
-import Navbar from "../components/Navbar";
 import BadgeForm from "../components/BadgeForm";
 
 class BadgeNew extends Component {
@@ -19,22 +18,7 @@ class BadgeNew extends Component {
       email: "",
       jobTitle: "",
       twitter: ""
-    },
-    buttons: {
-      watchButton: true
-    },
-    apps: {
-      watch: true
     }
-  };
-
-  handleClick = e => {
-    this.setState({
-      buttons: {
-        ...this.state.buttons,
-        [e.target.name]: !this.state.buttons.watchButton
-      }
-    });
   };
 
   handleChange = e => {
@@ -48,9 +32,7 @@ class BadgeNew extends Component {
 
   render() {
     return (
-      <div>
-        <Navbar onClick={this.handleClick} buttonsValues={this.state.buttons} />
-
+      <React.Fragment>
         <div className="BageNew_Hero">
           <div className="container">
             <div className="row">
@@ -82,7 +64,7 @@ class BadgeNew extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
